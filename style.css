@@ -71,14 +71,20 @@ body {
     margin-bottom: 30px;
 }
 
+/* --- Hero Card with Background Image --- */
 .hero-card {
     width: 100%;
     min-height: 400px;
-    background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('rideupbahamas_hero.jpg') center/cover;
+    /* Replace 'your-hero-image.jpg' with your actual image file name */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('your-hero-image.jpg');
+    background-size: cover;      /* Ensures the image fills the entire card */
+    background-position: center;  /* Centers the image within the card */
+    background-repeat: no-repeat;
     border-radius: 30px;
     display: flex;
     align-items: center;
-    padding: 40px; /* Internal spacing */
+    justify-content: center;      /* Centers the text horizontally and vertically */
+    padding: 20px;
     box-shadow: 0 20px 40px rgba(0,0,0,0.4);
 }
 
@@ -87,11 +93,15 @@ body {
 }
 
 .hero-content h1 {
-    font-size: clamp(2.5rem, 6vw, 4rem);
-    font-weight: 800;
-    line-height: 0.9;
+    color: #ffffff;              /* Ensures text is white to stand out against the image */
+    font-size: clamp(2.5rem, 8vw, 4rem);
+    font-weight: 900;
+    line-height: 1;
+    text-align: center;
     text-transform: uppercase;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7); /* Adds a shadow for extra readability */
 }
+
 
 /* --- Actions Layout --- */
 .actions-grid {
