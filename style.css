@@ -117,8 +117,8 @@ body {
 .hero-featured-image {
     width: 100%; /* Responsive width */
     max-width: 500px; /* Optional: Limits max width of the image */
-    height: auto; /* Maintains original image aspect ratio */
-    
+    height: fill; /* Maintains original image aspect ratio */
+    padding: 60px 20px;
     /* Crucial: Rounds the image corners to match image_8.png */
     border-radius: 20px; 
     
