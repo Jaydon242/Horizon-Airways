@@ -37,5 +37,39 @@ function addCTAFeedback() {
     });
 }
 
+    document.addEventListener('DOMContentLoaded', () => {
+    // Select existing elements from your previous code
+    const menuBtn = document.querySelector('.menu-icon');
+    const closeBtn = document.getElementById('close-menu');
+    const navOverlay = document.getElementById('nav-overlay');
+
+    // Open Menu
+    if (menuBtn) {
+        menuBtn.addEventListener('click', () => {
+            navOverlay.classList.add('open');
+            // Optional: Prevent body scroll when menu is open
+            document.body.style.overflow = 'hidden';
+        });
+    }
+
+    // Close Menu
+    if (closeBtn) {
+        closeBtn.addEventListener('click', () => {
+            navOverlay.classList.remove('open');
+            // Re-enable scroll
+            document.body.style.overflow = 'auto';
+        });
+    }
+    
+    // Close menu if a link is clicked
+    const navLinks = document.querySelectorAll('.menu-list a');
+    navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            navOverlay.classList.remove('open');
+            document.body.style.overflow = 'auto';
+        });
+    });
+});
+
 // Run the function when the DOM is fully loaded
 document.addEventListener('DOMContentLoaded', addCTAFeedback);
