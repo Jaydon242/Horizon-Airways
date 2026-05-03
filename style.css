@@ -71,47 +71,64 @@ body {
     margin-bottom: 30px;
 }
 
-/* --- Hero Card with Floating Centered Text --- */
+/* --- UPDATED HERO CARD --- */
 .hero-card {
     width: 100%;
-    min-height: 450px; /* Adjust height based on your preference */
+    /* Let the content define the height rather than forcing a minimum */
+    padding: 60px 20px; 
     
-    /* Background Image setup */
-    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('your-hero-image.jpg');
-    background-size: cover;
-    background-position: center;
+    /* Solid Dark Background as seen in image_8.png */
+    background-color: #1a1a1a;
     border-radius: 30px;
     
-    /* The "Floating Center" Logic */
+    /* Standard Centering Logic */
     display: flex;
-    justify-content: center; /* Horizontal center */
-    align-items: center;     /* Vertical center */
-    
-    padding: 20px;
+    justify-content: center; /* Horizontal Center */
+    align-items: center;     /* Vertical Center */
     box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+    
+    /* Make sure children don't bleed out (important for rounded images) */
+    overflow: hidden; 
     position: relative;
-    overflow: hidden;
 }
 
-/* Styling the floating text */
+/* --- Group Content Styles --- */
 .hero-content {
-    text-align: center; /* Centers lines of text relative to each other */
-    z-index: 2;         /* Ensures text sits above the background */
+    text-align: center;
+    width: 100%;
+    max-width: 600px; /* Constrains width so it doesn't get too wide on desktop */
+    display: flex;
+    flex-direction: column; /* Stack text then image vertically */
+    align-items: center;    /* Center both elements horizontally */
 }
 
+/* --- Hero Text Styles --- */
 .hero-content h1 {
     color: #ffffff;
-    /* responsive font size */
-    font-size: clamp(2.8rem, 10vw, 5rem); 
+    font-size: clamp(2.5rem, 8vw, 4rem); /* Responsive typography */
     font-weight: 900;
-    line-height: 0.9;
+    line-height: 0.95;
     text-transform: uppercase;
-    letter-spacing: -2px;
-    
-    /* Subtle shadow to make it "float" off the background */
-    text-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
-    margin: 0;
+    margin-bottom: 25px; /* Space between text and image */
+    letter-spacing: -1px;
 }
+
+/* --- Hero Image Styles --- */
+.hero-featured-image {
+    width: 100%; /* Responsive width */
+    max-width: 500px; /* Optional: Limits max width of the image */
+    height: auto; /* Maintains original image aspect ratio */
+    
+    /* Crucial: Rounds the image corners to match image_8.png */
+    border-radius: 20px; 
+    
+    /* Soft shadow to give it separation from the dark background */
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+    
+    /* Optional optimization for smoother rendering */
+    will-change: transform; 
+}
+
 
 
 /* --- Actions Layout --- */
