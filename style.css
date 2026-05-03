@@ -147,7 +147,7 @@ body {
         align-items: flex-start;
         gap: 40px;
     }
-
+}
     /* --- Navigation Overlay --- */
 .nav-overlay {
     position: fixed;
@@ -240,4 +240,3 @@ body {
     text-decoration: none;
 }
 
-}
