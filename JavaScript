@@ -1,0 +1,32 @@
+document.addEventListener('DOMContentLoaded', () => {
+    const bookingForm = document.getElementById('booking-form');
+    const tripTypeRadios = document.querySelectorAll('input[name="trip-type"]');
+    const returnDateInput = document.getElementById('return');
+    
+    // Toggle Return Date input based on Trip Type selection
+    tripTypeRadios.forEach(radio => {
+        radio.addEventListener('change', (e) => {
+            if (e.target.value === 'one-way') {
+                returnDateInput.disabled = true;
+                returnDateInput.value = ''; // Clear value if disabled
+            } else {
+                returnDateInput.disabled = false;
+            }
+        });
+    });
+
+    // Handle form submission (Mock functionality)
+    bookingForm.addEventListener('submit', (e) => {
+        e.preventDefault(); // Prevent page reload
+        
+        const from = document.getElementById('from').value;
+        const to = document.getElementById('to').value;
+        const depart = document.getElementById('depart').value;
+        
+        // Simple console log to verify data capture
+        console.log(`Flight Search Triggered: ${from} to ${to} on ${depart}`);
+        
+        // Provide user feedback
+        alert(`Searching our database for flights from ${from.toUpperCase()} to ${to.toUpperCase()}...`);
+    });
+});
