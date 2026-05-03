@@ -71,35 +71,46 @@ body {
     margin-bottom: 30px;
 }
 
-/* --- Hero Card with Background Image --- */
+/* --- Hero Card with Floating Centered Text --- */
 .hero-card {
     width: 100%;
-    min-height: 400px;
-    /* Replace 'your-hero-image.jpg' with your actual image file name */
-    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('your-hero-image.jpg');
-    background-size: cover;      /* Ensures the image fills the entire card */
-    background-position: center;  /* Centers the image within the card */
-    background-repeat: no-repeat;
+    min-height: 450px; /* Adjust height based on your preference */
+    
+    /* Background Image setup */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('your-hero-image.jpg');
+    background-size: cover;
+    background-position: center;
     border-radius: 30px;
+    
+    /* The "Floating Center" Logic */
     display: flex;
-    align-items: center;
-    justify-content: center;      /* Centers the text horizontally and vertically */
+    justify-content: center; /* Horizontal center */
+    align-items: center;     /* Vertical center */
+    
     padding: 20px;
     box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+    position: relative;
+    overflow: hidden;
 }
 
+/* Styling the floating text */
 .hero-content {
-    text-align: left; /* Aligns text to the left within the card */
+    text-align: center; /* Centers lines of text relative to each other */
+    z-index: 2;         /* Ensures text sits above the background */
 }
 
 .hero-content h1 {
-    color: #ffffff;              /* Ensures text is white to stand out against the image */
-    font-size: clamp(2.5rem, 8vw, 4rem);
+    color: #ffffff;
+    /* responsive font size */
+    font-size: clamp(2.8rem, 10vw, 5rem); 
     font-weight: 900;
-    line-height: 1;
-    text-align: center;
+    line-height: 0.9;
     text-transform: uppercase;
-    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7); /* Adds a shadow for extra readability */
+    letter-spacing: -2px;
+    
+    /* Subtle shadow to make it "float" off the background */
+    text-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+    margin: 0;
 }
 
 
