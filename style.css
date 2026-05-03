@@ -264,3 +264,46 @@ body {
     border-radius: 50%;
     color: #000;
 }
+
+/* --- Moving Ribbon Styles --- */
+.ribbon-container {
+    width: 100%;
+    background-color: #0070f3; /* Matches your RIDER/DRIVER button blue */
+    color: #fff;
+    overflow: hidden; /* Hides the text as it leaves the screen */
+    padding: 12px 0;
+    display: flex;
+    align-items: center;
+    /* Optional: Slight tilt to give it a "ribbon" look */
+    /* transform: rotate(-1deg); */ 
+}
+
+.ribbon-track {
+    display: flex;
+    white-space: nowrap; /* Prevents text from wrapping to a new line */
+    will-change: transform; /* Optimizes for smoother animation */
+    animation: scroll-ribbon 20s linear infinite; /* 20s is roughly 1.0x speed */
+}
+
+.ribbon-track span {
+    font-size: 1.2rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    padding: 0 40px; /* Space between the repeating names */
+    letter-spacing: 2px;
+}
+
+/* The smooth, non-wavy movement logic */
+@keyframes scroll-ribbon {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%); /* Moves halfway so the loop is seamless */
+    }
+}
+
+/* Pause the ribbon if a user hovers over it (Optional) */
+.ribbon-container:hover .ribbon-track {
+    animation-play-state: paused;
+}
