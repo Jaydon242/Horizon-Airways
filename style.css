@@ -16,7 +16,7 @@ body {
 /* Mimics a modern phone viewport with a dark theme applied */
 .mobile-container {
     max-width: 480px; /* Standard mobile width for emulation */
-    margin: 0 auto; /* Center on screen */
+    margin: auto; /* Center on screen */
     background-color: #1a1a1a; /* Dark theme background */
     color: #fff;
     min-height: 100vh;
