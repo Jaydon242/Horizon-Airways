@@ -264,46 +264,53 @@ body {
     border-radius: 50%;
     color: #000;
 }
-
-/* --- Moving Ribbon Styles --- */
-.ribbon-container {
+/* --- Light Sea-Blue Ribbon Styles --- */
+.sea-blue-ribbon {
     width: 100%;
-    background-color: #0070f3; /* Matches your RIDER/DRIVER button blue */
-    color: #fff;
-    overflow: hidden; /* Hides the text as it leaves the screen */
-    padding: 12px 0;
+    background-color: #b8d4e3; /* Exact light sea-blue from the image */
+    color: #000; /* Black text for high contrast */
+    overflow: hidden;
+    padding: 20px 0; /* Slightly taller for that "banner" feel */
     display: flex;
     align-items: center;
-    /* Optional: Slight tilt to give it a "ribbon" look */
-    /* transform: rotate(-1deg); */ 
+    border-top: 1px solid rgba(0,0,0,0.05);
+    border-bottom: 1px solid rgba(0,0,0,0.05);
 }
 
 .ribbon-track {
     display: flex;
-    white-space: nowrap; /* Prevents text from wrapping to a new line */
-    will-change: transform; /* Optimizes for smoother animation */
-    animation: scroll-ribbon 20s linear infinite; /* 20s is roughly 1.0x speed */
+    white-space: nowrap;
+    will-change: transform;
+    /* 25s provides a very smooth, readable 1.0x speed */
+    animation: scroll-sea-ribbon 25s linear infinite; 
 }
 
 .ribbon-track span {
-    font-size: 1.2rem;
-    font-weight: 800;
+    font-size: 2.2rem; /* Matches the large bold text in the screenshot */
+    font-weight: 900; /* Extra bold */
     text-transform: uppercase;
-    padding: 0 40px; /* Space between the repeating names */
-    letter-spacing: 2px;
+    padding: 0 60px; /* Generous spacing between repetitions */
+    letter-spacing: -1px; /* Tighter letter spacing for that modern look */
 }
 
-/* The smooth, non-wavy movement logic */
-@keyframes scroll-ribbon {
+/* Linear horizontal scroll - No wave/distortion */
+@keyframes scroll-sea-ribbon {
     0% {
         transform: translateX(0);
     }
     100% {
-        transform: translateX(-50%); /* Moves halfway so the loop is seamless */
+        transform: translateX(-50%);
     }
 }
 
-/* Pause the ribbon if a user hovers over it (Optional) */
-.ribbon-container:hover .ribbon-track {
-    animation-play-state: paused;
+/* Responsive adjustment for mobile */
+@media (max-width: 600px) {
+    .ribbon-track span {
+        font-size: 1.5rem;
+        padding: 0 30px;
+    }
+    .sea-blue-ribbon {
+        padding: 15px 0;
+    }
 }
+
