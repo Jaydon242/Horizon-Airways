@@ -9,15 +9,33 @@
 <body>
 
     <div class="site-wrapper">
-        <header class="main-header">
-            <div class="header-inner">
-                <div class="header-logo">RIDEUPBAHAMAS</div>
-                <button id="open-menu" class="menu-icon" aria-label="Open Menu">
-                    <span class="menu-line"></span>
-                    <span class="menu-line"></span>
-                </button>
-            </div>
-        </header>
+
+        <div id="nav-overlay" class="nav-overlay">
+    <header class="overlay-header">
+        <div class="header-logo">RIDEUPBAHAMAS</div>
+        <button id="close-menu" class="close-icon" aria-label="Close Menu">&times;</button>
+    </header>
+
+    <nav class="overlay-menu">
+        <ul class="menu-list">
+            <li><a href="#">Services</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+            <li><a href="#" class="active-link">Home</a></li>
+        </ul>
+    </nav>
+
+    <footer class="overlay-footer">
+        <a href="#" class="social-icon">
+            <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+            </svg>
+        </a>
+    </footer>
+</div>
+
 
         <main class="content-container">
             <section class="hero-section">
@@ -27,31 +45,22 @@
                     </div>
                 </div>
             </section>
+
+            <div class="actions-grid">
+                <section class="action-item">
+                    <a href="#" class="cta-button">DRIVER</a>
+                    <div class="promo-bubble">Become a driver and get paid!</div>
+                </section>
+
+                <section class="action-item">
+                    <a href="#" class="cta-button">RIDER</a>
+                </section>
+            </div>
         </main>
-    </div>
 
-    <div id="nav-overlay" class="nav-overlay">
-        <header class="overlay-header">
-            <div class="header-logo">RIDEUPBAHAMAS</div>
-            <button id="close-menu" class="close-icon">&times;</button>
-        </header>
-
-        <nav class="overlay-menu">
-            <ul class="menu-list">
-                <li><a href="#">Services</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Contact</a></li>
-                <li><a href="#" class="active-link">Home</a></li>
-            </ul>
-        </nav>
-
-        <footer class="overlay-footer">
-            <a href="#" class="social-icon">
-                <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
-            </a>
-        </footer>
     </div>
 
     <script src="script.js"></script>
+
 </body>
 </html>
