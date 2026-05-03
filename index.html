@@ -3,25 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RIDEUPBAHAMAS - Home</title>
+    <title>RIDEUPBAHAMAS</title>
     <link rel="stylesheet" href="style.css">
-    </head>
+</head>
 <body>
 
-    <div class="mobile-container">
+    <div class="site-wrapper">
 
         <header class="main-header">
-            <div class="header-logo">
-                RIDEUPBAHAMAS
+            <div class="header-inner">
+                <div class="header-logo">RIDEUPBAHAMAS</div>
+                <button class="menu-icon">
+                    <span class="menu-line"></span>
+                    <span class="menu-line"></span>
+                </button>
             </div>
-            <button class="menu-icon" aria-label="Open Menu">
-                <span class="menu-line"></span>
-                <span class="menu-line"></span>
-            </button>
         </header>
 
-        <main class="main-content">
-
+        <main class="content-container">
             <section class="hero-section">
                 <div class="hero-card">
                     <div class="hero-content">
@@ -30,10 +29,23 @@
                 </div>
             </section>
 
-            <section class="action-section driver-section">
-                <a href="#" class="cta-button primary-cta">DRIVER</a>
-                
-                <div class="promo-bubble">
+            <div class="actions-grid">
+                <section class="action-item">
+                    <a href="#" class="cta-button">DRIVER</a>
+                    <div class="promo-bubble">Become a driver and get paid!</div>
+                </section>
+
+                <section class="action-item">
+                    <a href="#" class="cta-button">RIDER</a>
+                </section>
+            </div>
+        </main>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
                     Become a driver and get paid!
                 </div>
             </section>
