@@ -1,4 +1,4 @@
-/* --- Global Styles --- */
+/* --- Global Resets --- */
 * {
     margin: 0;
     padding: 0;
@@ -6,34 +6,148 @@
 }
 
 body {
-    background-color: #1a1a1a; /* Dark theme background fills the whole screen */
+    background-color: #141414; /* Deep dark background */
     color: #fff;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-    min-height: 100vh;
-    display: flex;
-    justify-content: center; /* Centers the app on desktop */
+    font-family: 'Inter', -apple-system, sans-serif;
+    line-height: 1.5;
 }
 
-/* --- Responsive Container --- */
-.mobile-container {
+/* --- Site Wrapper --- */
+.site-wrapper {
     width: 100%;
-    max-width: 500px; /* Constrains width on desktop so it doesn't stretch too far */
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-    background-color: #1a1a1a;
-    padding-bottom: 40px;
 }
 
-/* --- Header --- */
+/* --- Responsive Header --- */
 .main-header {
+    width: 100%;
+    padding: 20px;
+    background-color: #141414;
+}
+
+.header-inner {
+    max-width: 1200px; /* Constrains content on very wide screens */
+    margin: 0 auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px;
-    position: sticky;
-    top: 0;
-    z-index: 10;
+}
+
+.header-logo {
+    font-weight: 900;
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+}
+
+.menu-icon {
+    background: none;
+    border: none;
+    width: 24px;
+    height: 14px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    cursor: pointer;
+}
+
+.menu-line {
+    height: 2px;
+    width: 100%;
+    background-color: #fff;
+}
+
+/* --- Main Container --- */
+.content-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+    padding: 0 20px;
+}
+
+/* --- Fluid Hero Card --- */
+.hero-section {
+    margin-bottom: 30px;
+}
+
+.hero-card {
+    width: 100%;
+    min-height: 400px;
+    background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('rideupbahamas_hero.jpg') center/cover;
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    padding: 40px; /* Internal spacing */
+    box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+}
+
+.hero-content {
+    text-align: left; /* Aligns text to the left within the card */
+}
+
+.hero-content h1 {
+    font-size: clamp(2.5rem, 6vw, 4rem);
+    font-weight: 800;
+    line-height: 0.9;
+    text-transform: uppercase;
+}
+
+/* --- Actions Layout --- */
+.actions-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: flex-start; /* Keeps buttons left-aligned */
+}
+
+.action-item {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.cta-button {
+    background-color: #0070f3; /* Vibrant blue */
+    color: #fff;
+    text-decoration: none;
+    font-weight: 700;
+    padding: 16px 40px;
+    border-radius: 100px;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+}
+
+.cta-button:hover {
+    background-color: #0051ad;
+    transform: translateY(-2px);
+}
+
+.promo-bubble {
+    background-color: #2a2a2a;
+    color: #999;
+    padding: 10px 20px;
+    border-radius: 50px;
+    margin-top: 15px;
+    font-size: 0.85rem;
+    border: 1px solid #333;
+}
+
+/* --- Desktop Layout Adjustments --- */
+@media (min-width: 1024px) {
+    .hero-card {
+        min-height: 500px;
+    }
+    
+    /* On desktop, we can make the buttons sit side-by-side if you prefer, 
+       or keep them stacked but aligned to the left of the screen */
+    .actions-grid {
+        flex-direction: row; 
+        align-items: flex-start;
+        gap: 40px;
+    }
+}
     background-color: #1a1a1a;
 }
 
