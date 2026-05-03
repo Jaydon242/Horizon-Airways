@@ -147,4 +147,97 @@ body {
         align-items: flex-start;
         gap: 40px;
     }
+
+    /* --- Navigation Overlay --- */
+.nav-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #d1d1d1; /* The light grey color from the screenshot */
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px;
+    
+    /* Hidden by default */
+    transform: translateX(100%);
+    transition: transform 0.4s cubic-bezier(0.77, 0, 0.175, 1);
+}
+
+/* State when menu is open */
+.nav-overlay.open {
+    transform: translateX(0);
+}
+
+.overlay-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #000;
+}
+
+.close-icon {
+    background: none;
+    border: none;
+    font-size: 2.5rem;
+    color: #000;
+    cursor: pointer;
+    line-height: 1;
+}
+
+/* --- Menu Links --- */
+.overlay-menu {
+    flex-grow: 1;
+    display: flex;
+    align-items: center; /* Vertical center */
+    padding-left: 10px;
+}
+
+.menu-list {
+    list-style: none;
+}
+
+.menu-list li {
+    margin: 15px 0;
+}
+
+.menu-list a {
+    text-decoration: none;
+    color: #000;
+    font-size: 2.5rem; /* Large text as seen in screenshot */
+    font-weight: 500;
+    transition: opacity 0.2s;
+}
+
+.menu-list a:hover {
+    opacity: 0.6;
+}
+
+/* Underline for the active page (Home) */
+.active-link {
+    text-decoration: underline !important;
+    text-underline-offset: 8px;
+    text-decoration-thickness: 2px !important;
+}
+
+/* --- Social Footer --- */
+.overlay-footer {
+    padding-bottom: 20px;
+}
+
+.social-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    border: 2px solid #000;
+    border-radius: 50%;
+    color: #000;
+    text-decoration: none;
+}
+
 }
