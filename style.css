@@ -264,37 +264,43 @@ body {
     border-radius: 50%;
     color: #000;
 }
-/* --- Light Sea-Blue Ribbon Styles --- */
+/* --- Pure CSS Wavy Ribbon --- */
 .sea-blue-ribbon {
     width: 100%;
-    background-color: #b8d4e3; /* Exact light sea-blue from the image */
-    color: #000; /* Black text for high contrast */
+    background-color: #b8d4e3; /* Light sea-blue */
+    color: #000;
     overflow: hidden;
-    padding: 20px 0; /* Slightly taller for that "banner" feel */
+    padding: 40px 0; /* Extra height to accommodate the wave */
+    position: relative;
     display: flex;
     align-items: center;
-    border-top: 1px solid rgba(0,0,0,0.05);
-    border-bottom: 1px solid rgba(0,0,0,0.05);
 }
 
-.ribbon-track {
+/* Container for the horizontal movement */
+.ribbon-scroll {
     display: flex;
     white-space: nowrap;
-    will-change: transform;
-    /* 25s provides a very smooth, readable 1.0x speed */
-    animation: scroll-sea-ribbon 25s linear infinite; 
+    animation: horizontal-scroll 25s linear infinite;
 }
 
-.ribbon-track span {
-    font-size: 2.2rem; /* Matches the large bold text in the screenshot */
-    font-weight: 900; /* Extra bold */
+/* Container for the vertical wave movement */
+.ribbon-wave {
+    display: flex;
+    animation: vertical-wave 4s ease-in-out infinite;
+}
+
+.ribbon-wave span {
+    font-size: 2.2rem;
+    font-weight: 900;
     text-transform: uppercase;
-    padding: 0 60px; /* Generous spacing between repetitions */
-    letter-spacing: -1px; /* Tighter letter spacing for that modern look */
+    padding: 0 50px;
+    letter-spacing: -1px;
 }
 
-/* Linear horizontal scroll - No wave/distortion */
-@keyframes scroll-sea-ribbon {
+/* --- ANIMATIONS --- */
+
+/* 1. Seamless Horizontal Loop */
+@keyframes horizontal-scroll {
     0% {
         transform: translateX(0);
     }
@@ -303,14 +309,23 @@ body {
     }
 }
 
-/* Responsive adjustment for mobile */
-@media (max-width: 600px) {
-    .ribbon-track span {
-        font-size: 1.5rem;
-        padding: 0 30px;
+/* 2. Vertical Wave (The "Bobbing" Effect) */
+@keyframes vertical-wave {
+    0%, 100% {
+        transform: translateY(-8px); /* Top of the wave */
     }
-    .sea-blue-ribbon {
-        padding: 15px 0;
+    50% {
+        transform: translateY(8px); /* Bottom of the wave */
     }
 }
 
+/* Responsive Scaling */
+@media (max-width: 768px) {
+    .ribbon-wave span {
+        font-size: 1.6rem;
+        padding: 0 30px;
+    }
+    .sea-blue-ribbon {
+        padding: 25px 0;
+    }
+}
