@@ -10,12 +10,15 @@ body {
     color: #000;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; /* Common, bold system font stack */
     overflow-x: hidden; /* Prevent horizontal scroll */
+    min-height: 100vh;
+    display: flex;
     justify-content: center;
 }
 
 /* --- Mobile Page Container --- */
 /* Mimics a modern phone viewport with a dark theme applied */
 .mobile-container {
+    width: 100;
     max-width: 480px; /* Standard mobile width for emulation */
     background-color: #1a1a1a; /* Dark theme background */
     color: #fff;
